@@ -1,7 +1,7 @@
 package prog2.model;
 import java.util.*;
 import java.io.*;
-import vista.*;
+import prog2.vista.*;
 public class Client {
     // Atributs
     private String nom;
