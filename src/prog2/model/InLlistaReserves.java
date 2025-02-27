@@ -1,8 +1,6 @@
-
 package prog2.model;
 
 import java.time.LocalDate;
-import prog2.model.*;
 import prog2.vista.*;
 
 /**
@@ -10,19 +8,18 @@ import prog2.vista.*;
  * @author lauraigual
  */
 public interface InLlistaReserves {
-    
+
     /**
      * Comprova que l'allotjament estigui disponible pel dia i hora indicat.
      * En cas afirmatiu, crea la reserva i l’afegeix a la llista de reserves del gimnàs. 
      * En cas negatiu, llança una excepció de tipus ExceptionReserva amb el missatge d'error.
-     * 
-     * @param allotjament
-     * @param client
-     * @param dataEntrada
-     * @param dataSortida
-     * @throws ExcepcioReserva 
+     *
+     * @param allotjament .
+     * @param client .
+     * @param dataEntrada .
+     * @param dataSortida .
+     * @throws ExcepcioReserva .
      */
-
      void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva;
 
     /**

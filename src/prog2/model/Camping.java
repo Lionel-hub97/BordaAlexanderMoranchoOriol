@@ -1,17 +1,23 @@
 package prog2.model;
 import java.time.LocalDate;
-import java.util.*;
+
 import prog2.vista.*;
-import prog2.model.*;
+
 import java.util.ArrayList;
 
 
-public class Camping{
+public class Camping implements InCamping {
 
-    private String nom;
+    private final String nom;
     private ArrayList<Allotjament> allotjaments;
     private ArrayList<Reserva> reserves;
     private ArrayList<Client> clients;
+
+
+    private String idAllotjament, mida, nomClient, dni, codiWifi, material;
+    private float metres;
+    private int habitacions, placesPersones, placesParquing;
+    private boolean connexioElectrica, terrassa, tv, aireFred, serveisExtra, casaMascota, terrassaBarbacoa;
 
     public Camping(String nom){
         this.nom = nom;
@@ -23,189 +29,92 @@ public class Camping{
         this.clients = new ArrayList<>();
     }
 
-    private String idAllotjament, mida, nomClient, dni, codiWifi, material;
-    private float metres;
-    private int habitacions, placesPersones, placesParquing;
-    private boolean connexioElectrica, terrassa, tv, aireFred, serveisExtra, casaMascota, terrassaBarbacoa;
-
-    public String getNom(){
-        return this.nom;
+    @Override
+    public String getNom() {
+        return nom;
     }
 
-
-
-
-
-
-    /**
-     * @return
-     */
-
+    @Override
     public LlistaReserves getLlistaReserves() {
         return null;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public ArrayList<Allotjament> getLlistaAllotjaments() {
         return null;
     }
 
-    /**
-     * @return
-     */
+    @Override
     public ArrayList<Client> getLlistaClients() {
         return null;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public int getNumAllotjaments() {
         return 0;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public int getNumReserves() {
         return 0;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public int getNumClients() {
         return 0;
     }
 
-    /**
-     * @param nom_ el nom del nou client.
-     * @param dni_ el DNI del nou client.
-     * @throws ExcepcioReserva
-     */
-
-    public void afegirClient(String nom_, String dni_) throws prog2.vista.ExcepcioReserva {
+    @Override
+    public void afegirClient(String nom_, String dni_) throws ExcepcioReserva {
 
     }
 
-    /**
-     * @param nom_              el nom de la parcela.
-     * @param idAllotjament_    l'identificador únic de l'allotjament.
-     * @param metres            la mida de la parcela.
-     * @param connexioElectrica true si disposa de connexió elèctrica, false altrament.
-     */
-
+    @Override
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
 
     }
 
-    /**
-     * @param nom_           el nom del bungalow.
-     * @param idAllotjament_ l'identificador únic de l'allotjament.
-     * @param mida           la mida del bungalow.
-     * @param habitacions    el nombre d'habitacions del bungalow.
-     * @param placesPersones el nombre màxim de places per a persones.
-     * @param placesParquing el nombre de places de pàrquing disponibles.
-     * @param terrassa       true si disposa de terrassa, false altrament.
-     * @param tv             true si disposa de televisió, false altrament.
-     * @param aireFred       true si disposa d'aire condicionat, false altrament.
-     */
-
+    @Override
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
 
     }
 
-    /**
-     * @param nom_
-     * @param idAllotjament_
-     * @param mida
-     * @param habitacions
-     * @param placesPersones
-     * @param placesParquing
-     * @param terrassa
-     * @param tv
-     * @param aireFred
-     * @param serveisExtra   true si ofereix serveis extra.
-     * @param codiWifi       el codi de la xarxa Wi-Fi.
-     *                       (Altres paràmetres igual que `afegirBungalow`)
-     */
-
+    @Override
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi) {
 
     }
 
-    /**
-     * @param nom_
-     * @param idAllotjament_
-     * @param mida
-     * @param habitacions
-     * @param placesPersones
-     * @param material       el material del que està fet.
-     * @param casaMascota    true si accepta mascotes.
-     *                       (Altres paràmetres igual que `afegirBungalow`)
-     */
-
+    @Override
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota) {
 
     }
 
-    /**
-     * @param nom_
-     * @param idAllotjament_
-     * @param mida
-     * @param habitacions
-     * @param placesPersones
-     * @param terrassaBarbacoa true si disposa de terrassa amb barbacoa.
-     *                         (Altres paràmetres igual que `afegirBungalow`)
-     */
-
+    @Override
     public void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
 
     }
 
-    /**
-     * @param id_         l'identificador de l'allotjament.
-     * @param dni_        el DNI del client que fa la reserva.
-     * @param dataEntrada la data d'entrada.
-     * @param dataSortida la data de sortida.
-     * @throws ExcepcioReserva
-     */
-
+    @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
 
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public float calculMidaTotalParceles() {
         return 0;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public int calculAllotjamentsOperatius() {
         return 0;
     }
 
-    /**
-     * @return
-     */
-
+    @Override
     public Allotjament getAllotjamentEstadaMesCurta() {
         return null;
     }
 
-    /** Acabar, dona errors:
+    /* Acabar, dona errors:
      public static Allotjament.Temp getTemporada(LocalDate data) {
      int dia = data.getDayOfMonth();
      int mes = data.getMonthValue();
@@ -221,5 +130,5 @@ public class Camping{
      else {
      return Allotjament.Temp.BAIXA;
      }
-     **/
+     */
 }

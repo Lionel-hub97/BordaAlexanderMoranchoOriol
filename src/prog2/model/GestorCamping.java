@@ -1,7 +1,7 @@
 
-package prog2.vista;
+package prog2.model;
 
-import prog2.model.*;
+import prog2.vista.ExcepcioReserva;
 
 
 /**

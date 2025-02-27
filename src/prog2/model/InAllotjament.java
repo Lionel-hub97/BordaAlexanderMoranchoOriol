@@ -7,7 +7,6 @@ package prog2.model;
  */
 public interface InAllotjament {
 
-
     /**
      * Obté el nom de l'allotjament.
      * @return el nom de l'allotjament.

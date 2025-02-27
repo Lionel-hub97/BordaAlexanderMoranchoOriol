@@ -4,7 +4,7 @@ import java.io.*;
 import prog2.vista.*;
 public class Client {
     // Atributs
-    private String nom;
+    private final String nom;
     private String dni;
 
     // Constructor

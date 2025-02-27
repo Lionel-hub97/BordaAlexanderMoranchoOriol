@@ -4,14 +4,12 @@ package prog2.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import prog2.vista.*;
-import prog2.model.*;
+import prog2.vista.ExcepcioReserva;
 
 /**
  * Interfície per definir la forma del Càmping
  * @author lauraigual
  */
-
 public interface InCamping {
 
     /**
@@ -22,7 +20,7 @@ public interface InCamping {
 
     /**
      * Retorna la llista de reserves del camping.
-     * @return
+     * @return .
      */
     LlistaReserves getLlistaReserves();
 
@@ -33,7 +31,7 @@ public interface InCamping {
 
     /**
      * Retorna la llista de clients del camping.
-     * @return
+     * @return .
      */
     ArrayList<Client> getLlistaClients();
 
