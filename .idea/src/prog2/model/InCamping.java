@@ -11,6 +11,7 @@ import prog2.model.*;
  * Interfície per definir la forma del Càmping
  * @author lauraigual
  */
+
 public interface InCamping {
 
     /**

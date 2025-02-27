@@ -22,6 +22,7 @@ public interface InLlistaReserves {
      * @param dataSortida
      * @throws ExcepcioReserva 
      */
+
      void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva;
 
     /**
