@@ -1,6 +1,7 @@
 package prog2.model;
 
 import java.time.LocalDate;
+import prog2.model.*;
 
 public class LlistaReserves implements InLlistaReserves {
 
