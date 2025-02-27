@@ -1,7 +1,7 @@
 
-package vista;
+package prog2.vista;
 
-import model.Camping;
+import prog2.model.*;
 
 
 /**

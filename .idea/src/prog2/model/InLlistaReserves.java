@@ -2,7 +2,7 @@
 package model;
 
 import java.time.LocalDate;
-import vista.*;
+import prog2.vista.*;
 
 /**
  * Interfície per definir la forma de la llista de reserves
