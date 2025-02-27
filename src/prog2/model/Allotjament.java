@@ -1,4 +1,4 @@
-package model;
+package prog2.model;
 
 public class Allotjament implements InAllotjament {
     @Override
@@ -32,7 +32,7 @@ public class Allotjament implements InAllotjament {
     }
 
     @Override
-    public long getEstadaMinima(model.InAllotjament.Temp temp) {
+    public long getEstadaMinima(Temp temp) {
         return 0;
     }
 }
