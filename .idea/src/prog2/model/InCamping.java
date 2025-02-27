@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import prog2.vista.*;
+import prog2.model.*;
 
 /**
  * Interfície per definir la forma del Càmping
