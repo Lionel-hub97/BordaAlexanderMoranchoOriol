@@ -1,13 +1,6 @@
-package prog2.model;
+package model;
 
 public class Allotjament implements InAllotjament {
-
-
-    private String nom;
-    private String idAllotjament;
-    private static long estadaMinimaALTA;
-    private static long estadaMinimaBAIXA;
-
     @Override
     public String getNom() {
         return "";
