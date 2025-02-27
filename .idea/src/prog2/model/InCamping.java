@@ -1,5 +1,5 @@
 
-package model;
+package prog2.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
