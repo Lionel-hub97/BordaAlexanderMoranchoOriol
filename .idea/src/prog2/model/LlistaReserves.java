@@ -2,6 +2,7 @@ package prog2.model;
 
 import java.time.LocalDate;
 import prog2.model.*;
+import prog2.vista.*;
 
 public class LlistaReserves implements InLlistaReserves {
 
