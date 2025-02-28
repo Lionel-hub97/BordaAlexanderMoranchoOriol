@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Camping implements InCamping {
 
-    private final String nom;
+    private final String nom_;
     private ArrayList<Allotjament> allotjaments;
     private ArrayList<Reserva> reserves;
     private ArrayList<Client> clients;
@@ -19,19 +19,21 @@ public class Camping implements InCamping {
     private int habitacions, placesPersones, placesParquing;
     private boolean connexioElectrica, terrassa, tv, aireFred, serveisExtra, casaMascota, terrassaBarbacoa;
 
+    //CONSTRUCTORS
     public Camping(String nom){
-        this.nom = nom;
+        this.nom_ = nom;
     }
     public Camping () {
-        this.nom = "Camping del mar";
+        this.nom_ = "Camping del mar";
         this.allotjaments = new ArrayList<>();
         this.reserves = new ArrayList<>();
         this.clients = new ArrayList<>();
     }
 
+    //GETTERS
     @Override
     public String getNom() {
-        return nom;
+        return nom_;
     }
 
     @Override
@@ -64,6 +66,8 @@ public class Camping implements InCamping {
         return 0;
     }
 
+
+    //OTROS CONSTRUCTORES
     @Override
     public void afegirClient(String nom_, String dni_) throws ExcepcioReserva {
 
