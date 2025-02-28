@@ -126,8 +126,15 @@ public class Camping implements InCamping {
         }
         return null;
     }
-    public static InAllotjament.Temp getTemporada(LocalDate data){
-        return null; //POR ACABAR TIENE QUE DEVOLVER SI ES TEMPROADA ALTA O BAJA SEGUN AL FECHA
+    public static InAllotjament.Temp getTemporada(LocalDate data) {
+        LocalDate inicioAlta = LocalDate.of(data.getYear(), 3, 21);
+        LocalDate finAlta = LocalDate.of(data.getYear(), 9, 20);
+
+        if (!data.isBefore(inicioAlta) && !data.isAfter(finAlta)) {
+            return InAllotjament.Temp.ALTA;
+        } else {
+            return InAllotjament.Temp.BAIXA;
+        }
     }
 
     /* Acabar, dona errors:
@@ -135,8 +142,7 @@ public class Camping implements InCamping {
      int dia = data.getDayOfMonth();
      int mes = data.getMonthValue();
      Allotjament.getEstadaMinima()
-     // Temporada ALTA: 21 març - 20 setembre
-
+     // Temporada ALTA: 21 març - 20 setembr
      if ((mes > 3 && mes < 9) || (mes == 3 && dia >= 21) || (mes == 9 && dia <= 20)) {
 
      }
