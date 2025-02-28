@@ -72,50 +72,62 @@ public class Camping implements InCamping {
     public void afegirClient(String nom_, String dni_) throws ExcepcioReserva {
 
     }
-
     @Override
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
 
     }
-
     @Override
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
 
     }
-
     @Override
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi) {
 
     }
-
     @Override
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota) {
 
     }
-
     @Override
     public void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
 
     }
-
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
 
     }
-
     @Override
     public float calculMidaTotalParceles() {
         return 0;
     }
-
     @Override
     public int calculAllotjamentsOperatius() {
         return 0;
     }
-
     @Override
     public Allotjament getAllotjamentEstadaMesCurta() {
         return null;
+    }
+
+    //ESTOS DOS METODOS SIGUIENTES SON DE SOPORTE TAL Y COMO DICE EL PDF PAGINA 7, buscarAllotjament(); buscarClient();
+    public Client buscarClient(String dni){
+        for (Client client : clients) {
+            if (client.getDni().equals(dni)) {
+                return client;
+            }
+        }
+        return null;
+    }
+    public Allotjament buscarAllotjament(String allotjamentID) {
+        for (Allotjament allotjament : allotjaments) {
+            if (allotjament.getId().equals(allotjamentID)) {
+                return allotjament;
+            }
+        }
+        return null;
+    }
+    public static InAllotjament.Temp getTemporada(LocalDate data){
+        return null; //POR ACABAR TIENE QUE DEVOLVER SI ES TEMPROADA ALTA O BAJA SEGUN AL FECHA
     }
 
     /* Acabar, dona errors:
