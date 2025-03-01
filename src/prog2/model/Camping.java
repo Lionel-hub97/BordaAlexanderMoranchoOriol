@@ -137,20 +137,4 @@ public class Camping implements InCamping {
         }
     }
 
-    /* Acabar, dona errors:
-     public static Allotjament.Temp getTemporada(LocalDate data) {
-     int dia = data.getDayOfMonth();
-     int mes = data.getMonthValue();
-     Allotjament.getEstadaMinima()
-     // Temporada ALTA: 21 març - 20 setembr
-     if ((mes > 3 && mes < 9) || (mes == 3 && dia >= 21) || (mes == 9 && dia <= 20)) {
-
-     }
-     return Allotjament.Temp.ALTA;
-     }
-     // Temporada BAIXA: 21 setembre - 20 març
-     else {
-     return Allotjament.Temp.BAIXA;
-     }
-     */
 }
