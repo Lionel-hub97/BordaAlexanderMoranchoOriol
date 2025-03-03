@@ -33,4 +33,9 @@ public class Glamping extends Casa {
     public boolean correcteFuncionament() {
         return casaMascota;
     }
+
+    @Override
+    public String toString() {
+        return "";
+    }
 }
