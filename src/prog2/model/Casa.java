@@ -13,8 +13,6 @@ public class Casa extends Allotjament {
         this.numHabitacions = numHabitacions;
         this.capacitatPersones = capacitatPersones;
     }
-
-    // Getter i Setter per mida
     public Mida getMida() {
         return mida;
     }
@@ -22,8 +20,6 @@ public class Casa extends Allotjament {
     public void setMida(Mida mida) {
         this.mida = mida;
     }
-
-    // Getter i Setter per número d'habitacions
     public int getNumHabitacions() {
         return numHabitacions;
     }
@@ -31,8 +27,6 @@ public class Casa extends Allotjament {
     public void setNumHabitacions(int numHabitacions) {
         this.numHabitacions = numHabitacions;
     }
-
-    // Getter i Setter per capacitat de places
     public int getCapacitatPersones() {
         return capacitatPersones;
     }

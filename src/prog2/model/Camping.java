@@ -135,5 +135,4 @@ public class Camping implements InCamping {
             return InAllotjament.Temp.BAIXA;
         }
     }
-
 }

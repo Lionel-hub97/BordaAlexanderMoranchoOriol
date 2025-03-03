@@ -10,8 +10,8 @@ public class Bungalow extends Casa {
 
 
     //CONSTRUCTOR
-    public Bungalow(String nom, String idAllotjament, Mida mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        super(Casa.Mida.MITJANA, habitacions, placesPersones );
+    public Bungalow(String nom, String idAllotjament, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
+        super(Mida.MITJANA, habitacions, placesPersones );
         super.setEstadaMinima(7,4);
         super.setId(idAllotjament);
         super.setNom(nom);
