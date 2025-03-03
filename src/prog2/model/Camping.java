@@ -21,8 +21,8 @@ public class Camping implements InCamping {
 
     //CONSTRUCTORS
 
-    public Camping () {
-        this.nom_ = "Camping del mar";
+    public Camping (String nom) {
+        this.nom_ = nom;
         this.allotjaments = new ArrayList<>();
         this.reserves = new ArrayList<>();
         this.clients = new ArrayList<>();
