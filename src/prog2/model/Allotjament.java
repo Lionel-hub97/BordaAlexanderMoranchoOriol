@@ -17,7 +17,7 @@ public class Allotjament implements InAllotjament {
 
     @Override
     public void setNom(String nom) {
-
+        this.nom = nom;
     }
 
     @Override
@@ -26,8 +26,8 @@ public class Allotjament implements InAllotjament {
     }
 
     @Override
-    public void setId(String id) {
-        this.idAllotjament = id;
+    public void setId(String idAllotjament) {
+        this.idAllotjament = idAllotjament;
     }
 
     @Override
