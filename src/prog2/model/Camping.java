@@ -20,9 +20,7 @@ public class Camping implements InCamping {
     private boolean connexioElectrica, terrassa, tv, aireFred, serveisExtra, casaMascota, terrassaBarbacoa;
 
     //CONSTRUCTORS
-    public Camping(String nom){
-        this.nom_ = nom;
-    }
+
     public Camping () {
         this.nom_ = "Camping del mar";
         this.allotjaments = new ArrayList<>();
@@ -34,6 +32,7 @@ public class Camping implements InCamping {
     @Override
     public String getNom() {
         return nom_;
+
     }
 
     @Override
