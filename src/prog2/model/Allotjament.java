@@ -51,8 +51,10 @@ public class Allotjament implements InAllotjament {
         estadaMinimaBAIXA = estadaMinimaBAIXA_;
     }
 
-    @Override
-    public boolean correcteFuncionament() {
+
+    public boolean correcteFuncionament(){
         return false;
     }
+
+
 }
