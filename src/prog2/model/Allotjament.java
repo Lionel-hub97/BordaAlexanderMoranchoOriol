@@ -10,6 +10,12 @@ public class Allotjament implements InAllotjament {
     private Temp temp;
 
 
+    public Allotjament(String nom, String idAllotjament, long estadaMinimaBaixa, long estadaMinimaAlta) {
+        this.nom = nom;
+        this.idAllotjament = idAllotjament;
+        this.estadaMinimaBAIXA = estadaMinimaBaixa;
+        this.estadaMinimaALTA = estadaMinimaAlta;
+    }
     @Override
     public String getNom() {
         return nom;

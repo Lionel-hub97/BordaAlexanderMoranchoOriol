@@ -1,8 +1,6 @@
 
-package prog2.model;
-
-import prog2.vista.ExcepcioReserva;
-
+package prog2.vista;
+import prog2.model.*;
 
 /**
  * Classe per gestionar els allotjaments del Càmping del Mar.
