@@ -5,13 +5,13 @@ public class Casa extends Allotjament {
 
     private Mida mida;
     private int numHabitacions;
-    private int capacitatPlaces;
+    private int capacitatPersones;
 
     // Constructor
-    public Casa(Mida mida, int numHabitacions, int capacitatPlaces) {
+    public Casa(Mida mida, int numHabitacions, int capacitatPersones) {
         this.mida = mida;
         this.numHabitacions = numHabitacions;
-        this.capacitatPlaces = capacitatPlaces;
+        this.capacitatPersones = capacitatPersones;
     }
 
     // Getter i Setter per mida
@@ -33,11 +33,11 @@ public class Casa extends Allotjament {
     }
 
     // Getter i Setter per capacitat de places
-    public int getCapacitatPlaces() {
-        return capacitatPlaces;
+    public int getCapacitatPersones() {
+        return capacitatPersones;
     }
 
-    public void setCapacitatPlaces(int capacitatPlaces) {
-        this.capacitatPlaces = capacitatPlaces;
+    public void setCapacitatPersones(int capacitatPersones) {
+        this.capacitatPersones = capacitatPersones;
     }
 }
