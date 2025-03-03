@@ -20,6 +20,6 @@ public class Parcela extends Allotjament {
 
     @Override
     public String toString() {
-        return super.toString() + ". Parcela(mida=" + mida + ", connexioElectrica=" + connexioElectrica + ")";
+        return  ". Parcela(mida=" + mida + ", connexioElectrica=" + connexioElectrica + ")";
     }
 }
