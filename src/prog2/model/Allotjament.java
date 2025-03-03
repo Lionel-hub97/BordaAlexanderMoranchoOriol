@@ -1,6 +1,6 @@
 package prog2.model;
 
-public class Allotjament implements InAllotjament {
+public abstract class Allotjament implements InAllotjament {
 
 
     private String nom;
@@ -9,26 +9,27 @@ public class Allotjament implements InAllotjament {
     private long estadaMinimaBAIXA;
     private Temp temp;
 
+
+    //CONSTRUCTOR
+
+
+    //GETTERS Y SETTERS
     @Override
     public String getNom() {
         return nom;
     }
-
     @Override
     public void setNom(String nom) {
         this.nom = nom;
     }
-
     @Override
     public String getId() {
         return idAllotjament;
     }
-
     @Override
     public void setId(String idAllotjament) {
         this.idAllotjament = idAllotjament;
     }
-
     @Override
     public long getEstadaMinima(Temp temp) {
         return switch (temp) {
@@ -37,17 +38,18 @@ public class Allotjament implements InAllotjament {
             default -> throw new IllegalArgumentException("Temporada no vàlida");
         };
     }
-
     @Override
-    public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
-        estadaMinimaALTA = estadaMinimaALTA_;
-        estadaMinimaBAIXA = estadaMinimaBAIXA_;
+    public void setEstadaMinima(long estadaMinimaALTA, long estadaMinimaBAIXA) {
+        this.estadaMinimaALTA = estadaMinimaALTA;
+        this.estadaMinimaBAIXA = estadaMinimaBAIXA;
+    }
+    public long getEstadaMinimaBAIXA() {
+        return estadaMinimaBAIXA;
+    }
+    public long getEstadaMinimaALTA() {
+        return estadaMinimaALTA;
     }
 
-
-    public boolean correcteFuncionament(){
-        return false;
-    }
-
-
+    public abstract boolean correcteFuncionament();
+    public abstract String toString();
 }

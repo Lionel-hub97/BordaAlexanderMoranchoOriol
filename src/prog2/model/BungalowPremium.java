@@ -6,9 +6,9 @@ public class BungalowPremium extends Bungalow {
     private String codiWifi;
 
     // Constructor
-    public BungalowPremium(String nom, String idAllotjament, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi) {
-        super(nom, idAllotjament, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
-        setLlençolsTovalloles(serveisExtra);
+    public BungalowPremium(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi) {
+        super(nom, idAllotjament, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
+        setServeisExtra(serveisExtra);
         setCodiWifi(codiWifi);
     }
 
@@ -16,8 +16,8 @@ public class BungalowPremium extends Bungalow {
     public boolean getserveisExtra() {
         return serveisExtra;
     }
-    public void setLlençolsTovalloles(boolean llençolsTovalloles) {
-        this.serveisExtra = llençolsTovalloles;
+    public void setServeisExtra(boolean serveisExtra) {
+        this.serveisExtra = serveisExtra;
     }
     public String getCodiWifi() {
         return codiWifi;
@@ -26,5 +26,9 @@ public class BungalowPremium extends Bungalow {
         this.codiWifi = codiWifi;
     }
 
-    public
+    // Implementació del mètode correcteFuncionament
+    public boolean correcteFuncionament(){
+        int num_digits = codiWifi.length();
+        return super.correcteFuncionament() && (7 < num_digits && num_digits < 17);
+    }
 }

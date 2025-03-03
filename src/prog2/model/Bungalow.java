@@ -8,10 +8,9 @@ public class Bungalow extends Casa {
     private boolean tv;
     private boolean aireFred;
 
-
     //CONSTRUCTOR
-    public Bungalow(String nom, String idAllotjament, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        super(Mida.MITJANA, habitacions, placesPersones );
+    public Bungalow(String nom, String idAllotjament, String  mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
+        super(mida, habitacions, placesPersones );
         super.setEstadaMinima(7,4);
         super.setId(idAllotjament);
         super.setNom(nom);
@@ -27,7 +26,7 @@ public class Bungalow extends Casa {
     public void setPlacesParquing(int placesParquing) {
         this.placesParquing = placesParquing;
     }
-    public boolean isTerrassa() {
+    public boolean getTerrassa() {
         return terrassa;
     }
     public void setTerrassa(boolean terrassa) {
@@ -46,5 +45,12 @@ public class Bungalow extends Casa {
         this.aireFred = aireFred;
     }
 
+    // Implementació del mètode correcteFuncionament
+    public boolean correcteFuncionament(){
+        return aireFred;
+    }
+    public String toString() {
+        String x = "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+". Bungalow{mida="+getMida()+", connexioElectrica=true}";
 
+    }
 }

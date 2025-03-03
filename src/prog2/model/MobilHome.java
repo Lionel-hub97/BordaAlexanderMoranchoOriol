@@ -1,13 +1,28 @@
 package prog2.model;
 
-public class MobilHome extends Allotjament {
+public class MobilHome extends Casa {
     private boolean terrassaAmbBarbacoa;
 
     // Constructor
-    public MobilHome(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa, boolean terrassaAmbBarbacoa) {
-        super(nom, id, estadaMinimaAlta, estadaMinimaBaixa);
+    public MobilHome(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
+        super(mida, habitacions, placesPersones);
+        this.terrassaAmbBarbacoa = terrassaBarbacoa;
+        super.setEstadaMinima(7,4);
+        super.setId(idAllotjament);
+        super.setNom(nom);
+        setTerrassaAmbBarbacoa(terrassaBarbacoa);
+    }
+
+
+    //GETTERS Y SETTERS
+    public boolean isTerrassaAmbBarbacoa() {
+        return terrassaAmbBarbacoa;
+    }
+
+    public void setTerrassaAmbBarbacoa(boolean terrassaAmbBarbacoa) {
         this.terrassaAmbBarbacoa = terrassaAmbBarbacoa;
     }
+
 
     // Implementació del mètode correcteFuncionament
     @Override
@@ -17,6 +32,6 @@ public class MobilHome extends Allotjament {
 
     @Override
     public String toString() {
-        return super.toString() + ". MobilHome(terrassaAmbBarbacoa=" + terrassaAmbBarbacoa + ")";
+        return ". MobilHome(terrassaAmbBarbacoa=" + terrassaAmbBarbacoa + ")";
     }
 }

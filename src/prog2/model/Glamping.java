@@ -2,12 +2,12 @@ package prog2.model;
 
 public class Glamping extends Casa {
 
-    private String material = "Tela";
-    private boolean casaMascota = true;
+    private String material;
+    private boolean casaMascota;
 
     //CONSTRUCTOR
-    public Glamping(String nom, String idAllotjament, Mida mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        super(Casa.Mida.MITJANA, habitacions, placesPersones );
+    public Glamping(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, String material, boolean casaMascota) {
+        super(mida, habitacions, placesPersones );
         super.setEstadaMinima(7,4);
         super.setId(idAllotjament);
         super.setNom(nom);
@@ -29,4 +29,8 @@ public class Glamping extends Casa {
         this.casaMascota = casaMascota;
     }
 
+    // Implementació del mètode correcteFuncionament
+    public boolean correcteFuncionament() {
+        return casaMascota;
+    }
 }
