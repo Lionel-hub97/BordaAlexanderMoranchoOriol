@@ -5,11 +5,9 @@ public class MobilHome extends Casa {
 
     // Constructor
     public MobilHome(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
-        super(mida, habitacions, placesPersones);
+        super(nom, idAllotjament, 5, 3, mida,  habitacions, placesPersones);
         this.terrassaAmbBarbacoa = terrassaBarbacoa;
-        super.setEstadaMinima(7,4);
-        super.setId(idAllotjament);
-        super.setNom(nom);
+
         setTerrassaAmbBarbacoa(terrassaBarbacoa);
     }
 

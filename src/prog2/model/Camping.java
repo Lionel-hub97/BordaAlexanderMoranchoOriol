@@ -100,16 +100,16 @@ public class Camping implements InCamping {
     }
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
-        // Busca client i allotjament
         Client client = buscarClient(dni_);
         Allotjament allotjament = buscarAllotjament(id_);
 
-        // Verifica existències
-        if (client == null || allotjament == null) {
-            throw new ExcepcioReserva("Client o allotjament no trobat");
+        if (client == null) {
+            throw new ExcepcioReserva("Client amb DNI " + dni_ + " no trobat");
+        }
+        if (allotjament == null) {
+            throw new ExcepcioReserva("Allotjament amb ID " + id_ + " no trobat");
         }
 
-        // Delega la lògica a LlistaReserves
         reserves.afegirReserva(allotjament, client, dataEntrada, dataSortida);
     }
     @Override
@@ -162,7 +162,7 @@ public class Camping implements InCamping {
     }
     public Allotjament buscarAllotjament(String allotjamentID) {
         for (Allotjament allotjament : allotjaments) {
-            if (allotjament.getId().equals(allotjamentID)) {
+            if (allotjamentID.equals(allotjament.getId())) { // Compara amb l'string no nul
                 return allotjament;
             }
         }

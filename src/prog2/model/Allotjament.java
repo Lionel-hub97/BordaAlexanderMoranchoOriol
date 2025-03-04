@@ -11,7 +11,12 @@ public abstract class Allotjament implements InAllotjament {
 
 
     //CONSTRUCTOR
-
+    public Allotjament(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa) {
+        this.nom = nom;
+        this.idAllotjament = id;
+        this.estadaMinimaALTA = estadaMinimaAlta;
+        this.estadaMinimaBAIXA = estadaMinimaBaixa;
+    }
     //GETTERS Y SETTERS
     @Override
     public String getNom() {
@@ -50,5 +55,9 @@ public abstract class Allotjament implements InAllotjament {
     }
 
     public abstract boolean correcteFuncionament();
-    public abstract String toString();
+    public String toString() {
+        return "Nom=" + nom + ", Id=" + idAllotjament +
+                ", estada mínima en temp ALTA: " + estadaMinimaALTA +
+                ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
+    }
 }

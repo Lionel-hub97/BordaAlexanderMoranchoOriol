@@ -2,6 +2,9 @@
 package prog2.vista;
 import prog2.model.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 /**
  * Classe per gestionar els allotjaments del Càmping del Mar.
  * @author lauraigual
@@ -19,21 +22,31 @@ public class GestorCamping {
         
         ferReserves(campingMar);
 
-
+        //ELIMINAR: ---
+        ArrayList<Allotjament> allotjaments = campingMar.getLlistaAllotjaments();
+        for(Allotjament allotjament : allotjaments){
+            System.out.println("Nom: " + allotjament.getNom() + ", estada minima BAIXA: " + allotjament.getEstadaMinimaBAIXA() + ", estada minima ALTA: " + allotjament.getEstadaMinimaALTA());
+        }
+        // ---
 
         // Calcular la mida total de les parcel·les (en M^2) del Càmping i mostrar un missatge de la següent manera:
         // >> La mida total de les parcel·les del Càmping del Mar és de X m^2)
+        System.out.println("La mida total de les parcel·les del Càmping del Mar és "+ campingMar.calculMidaTotalParceles() + "m^2");
         //--------------------------------------------------------------------------------------------------------------------
         // Per completar
 
 
         // Mostrar el número total d'allotjaments del Càmping i el número d'allotjaments que estan operatius amb el següent missatge:
         // >> El número total d'allotjaments del Càmping és X dels quals X allotjaments estan operatius.
+        System.out.println("El número total d'allotjaments del càmping és "+ campingMar.getNumAllotjaments() + " dels quals " + campingMar.calculAllotjamentsOperatius() + " allotjaments estan operatius.");
+
         //--------------------------------------------------------------------------------------------------
         // Per completar
 
         // Mostrar l'allotjament amb estada mínima de la temporada baixa més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent:
+        System.out.println("L'allotjament amb estada mínima de la temporada baixa més curta és el següent: "+ campingMar.getAllotjamentEstadaMesCurta().getNom());
+
         //--------------------------------------------------------------------------------------------------
         // Per completar
        
@@ -184,8 +197,43 @@ public class GestorCamping {
      * Mètode per fer reserves d'allotjaments.
      * @param camping
      */
-    private static void ferReserves(Camping camping){
-        
+    private static void ferReserves(Camping camping) {
+        // Reserva 1 (Ja està implementada)
+        String dni = "12345678X";
+        String idAllotjament = "100P";
+        LocalDate dataEntrada = LocalDate.of(2025, 2, 20);
+        LocalDate dataSortida = LocalDate.of(2025, 2, 28);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva 2 (Per completar)
+        dni = "78659101A";
+        idAllotjament = "100P";
+        dataEntrada = LocalDate.of(2025, 2, 25);
+        dataSortida = LocalDate.of(2025, 2, 28);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage()); // Mostrarà error per solapament de dates
+        }
+
+        // Reserva 3 (Per completar)
+        dni = "789101A";
+        idAllotjament = "300S";
+        dataEntrada = LocalDate.of(2025, 2, 25);
+        dataSortida = LocalDate.of(2025, 2, 28);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage()); // Mostrarà error per allotjament no trobat
+        }
+    }
         // Per completar:
         
         // 1. Afegeix una reserva pel client amb DNI "12345678X" de l'allotjament amb identificador "100P"
@@ -223,4 +271,4 @@ public class GestorCamping {
         
     }
     
-}
+

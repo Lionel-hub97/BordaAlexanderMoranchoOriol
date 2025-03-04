@@ -8,19 +8,21 @@ public abstract class Casa extends Allotjament {
     private int capacitatPersones;
 
     // Constructor
-    public Casa(String mida, int numHabitacions, int capacitatPersones) {
-        this.mida = getMida(mida);
+    public Casa(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa,
+                String midaStr, int numHabitacions, int capacitatPersones) {
+        super(nom, id, estadaMinimaAlta, estadaMinimaBaixa); // Crida al constructor del pare
+        this.mida = getMida(midaStr); // Utilitza un mètode per a la conversió
         this.numHabitacions = numHabitacions;
         this.capacitatPersones = capacitatPersones;
     }
 
     //GETTERS Y SETTERS
     public Mida getMida(String mida) {
-        return switch (mida) {
+        return switch (mida.toUpperCase()) {
             case "PETITA" -> Mida.PETITA;
-            case "MITJANA" -> Mida.MITJANA;
+            case "MITJANA"-> Mida.MITJANA;
             case "GRAN" -> Mida.GRAN;
-            default -> throw new IllegalArgumentException("Temporada no vàlida");
+            default -> throw new IllegalArgumentException("Mida no vàlida");
         };
     }
     public void setMida(Mida mida) {
