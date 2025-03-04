@@ -31,6 +31,9 @@ public class BungalowPremium extends Bungalow {
         int num_digits = codiWifi.length();
         return super.correcteFuncionament() && (7 < num_digits && num_digits < 17);
     }
+    public boolean isServeisExtra(){
+        return serveisExtra;
+    }
     public String toString() {
         return "";
     }

@@ -46,7 +46,21 @@ public class Bungalow extends Casa {
     public void setAireFred(boolean aireFred) {
         this.aireFred = aireFred;
     }
-
+    public String getMida() {
+        return mida;
+    }
+    public void setMida(String mida) {
+        this.mida = mida;
+    }
+    public int getHabitacions(){
+        return getNumHabitacions();
+    }
+    public int getPlacesPersones(){
+        return getCapacitatPersones();
+    }
+    public boolean isTerrassa(){
+        return terrassa;
+    }
     // Implementació del mètode correcteFuncionament
     public boolean correcteFuncionament(){
         return aireFred;

@@ -1,7 +1,7 @@
 package prog2.model;
 
 public class Parcela extends Allotjament {
-    private double mida;
+    private float mida;
     private boolean connexioElectrica;
 
     // Constructor
@@ -10,6 +10,16 @@ public class Parcela extends Allotjament {
         super.setEstadaMinima( 4,2);
         this.mida = mida;
         this.connexioElectrica = connexioElectrica;
+    }
+
+    public float getMida() {
+        return mida;
+    }
+    public void setMida(float mida) {
+        this.mida = mida;
+    }
+    public boolean isConnexioElectrica() {
+        return connexioElectrica;
     }
 
 
