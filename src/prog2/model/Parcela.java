@@ -6,8 +6,8 @@ public class Parcela extends Allotjament {
 
     // Constructor
     public Parcela(String nom, String id, float mida, boolean connexioElectrica) {
-        super.setNom(nom);
-        super.setEstadaMinima( 4,2);
+        super(nom, id, 4, 2);
+
         this.mida = mida;
         this.connexioElectrica = connexioElectrica;
     }
@@ -21,6 +21,9 @@ public class Parcela extends Allotjament {
     public boolean isConnexioElectrica() {
         return connexioElectrica;
     }
+    public void setConnexioElectrica(boolean connexioElectrica) {
+        this.connexioElectrica = connexioElectrica;
+    }
 
 
     // Implementació del mètode correcteFuncionament
@@ -31,6 +34,6 @@ public class Parcela extends Allotjament {
 
     @Override
     public String toString() {
-        return  ". Parcela(mida=" + mida + ", connexioElectrica=" + connexioElectrica + ")";
+        return  "Nom="+ getNom() + ", Id="+ getId() + ", estada mínima en temp ALTA: "  + getEstadaMinimaALTA() + ", estada mínima en temp BAIXA: " + getEstadaMinimaBAIXA()+".";
     }
 }
