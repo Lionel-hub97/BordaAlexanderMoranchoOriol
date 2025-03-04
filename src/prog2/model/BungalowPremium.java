@@ -25,17 +25,14 @@ public class BungalowPremium extends Bungalow {
     public void setCodiWifi(String codiWifi) {
         this.codiWifi = codiWifi;
     }
+    public boolean getServeisExtra(){
+        return serveisExtra;
+    }
 
     // Implementació del mètode correcteFuncionament
     public boolean correcteFuncionament(){
         int num_digits = codiWifi.length();
         return super.correcteFuncionament() && (7 < num_digits && num_digits < 17);
-    }
-    public boolean isServeisExtra(){
-        return serveisExtra;
-    }
-    public String toString() {
-        return "";
     }
 
 }

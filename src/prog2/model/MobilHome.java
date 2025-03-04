@@ -6,8 +6,7 @@ public class MobilHome extends Casa {
     // Constructor
     public MobilHome(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
         super(nom, idAllotjament, 5, 3, mida,  habitacions, placesPersones);
-        this.terrassaAmbBarbacoa = terrassaBarbacoa;
-
+        //ATRIBUTS NOUS
         setTerrassaAmbBarbacoa(terrassaBarbacoa);
     }
 
@@ -28,8 +27,10 @@ public class MobilHome extends Casa {
         return terrassaAmbBarbacoa;
     }
 
+    /*
     @Override
     public String toString() {
         return ". MobilHome(terrassaAmbBarbacoa=" + terrassaAmbBarbacoa + ")";
     }
+     */
 }

@@ -11,17 +11,12 @@ public class Bungalow extends Casa {
 
     //CONSTRUCTOR
     public Bungalow(String nom, String idAllotjament, String  mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        super(mida, habitacions, placesPersones );
-        super.setEstadaMinima(7,4);
-        super.setId(idAllotjament);
-        super.setNom(nom);
-        super.setMida(mida);
+        super(nom, idAllotjament, 7, 4, mida, habitacions, placesPersones);
         //ATRIBUTS NOUS
         setPlacesParquing(placesParquing);
         setTerrassa(terrassa);
         setTv(tv);
         setAireFred(aireFred);
-        this.mida = mida;
     }
     // Getter y Setter
     public int getPlacesParquing() {
@@ -66,9 +61,5 @@ public class Bungalow extends Casa {
     // Implementació del mètode correcteFuncionament
     public boolean correcteFuncionament(){
         return aireFred;
-    }
-    public String toString() {
-        return super.toString()+super.getMida()+", }";
-
     }
 }

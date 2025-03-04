@@ -2,7 +2,6 @@ package prog2.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import prog2.model.*;
 import prog2.vista.ExcepcioReserva;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -149,7 +148,7 @@ public class CampingTest {
     public void testAfegirBungalowPremium() {
         // Afegim un Bungalow Prèmium i comprovem que s'ha afegit correctament
         BungalowPremium bungalowPremium = new BungalowPremium("Bungalow Premium", "BP001", "Gran", 2, 4, 2, true, true, true, true, "WiFi123");
-        camping.afegirBungalowPremium(bungalowPremium.getNom(), bungalowPremium.getId(), bungalowPremium.getMida(), bungalowPremium.getHabitacions(), bungalowPremium.getPlacesPersones(), bungalowPremium.getPlacesParquing(), bungalowPremium.isTerrassa(), bungalowPremium.isTv(), bungalowPremium.isAireFred(), bungalowPremium.isServeisExtra(), bungalowPremium.getCodiWifi());
+        camping.afegirBungalowPremium(bungalowPremium.getNom(), bungalowPremium.getId(), bungalowPremium.getMida(), bungalowPremium.getHabitacions(), bungalowPremium.getPlacesPersones(), bungalowPremium.getPlacesParquing(), bungalowPremium.isTerrassa(), bungalowPremium.isTv(), bungalowPremium.isAireFred(), bungalowPremium.getServeisExtra(), bungalowPremium.getCodiWifi());
 
         // Verifiquem que s'hagi afegit
         assertEquals(3, camping.getNumAllotjaments());  // Ara hauria d'haver 3 allotjaments

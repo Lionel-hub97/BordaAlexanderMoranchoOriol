@@ -8,6 +8,7 @@ public class Glamping extends Casa {
     //CONSTRUCTOR
     public Glamping(String nom, String idAllotjament, String mida, int habitacions, int placesPersones, String material, boolean casaMascota) {
         super(nom, idAllotjament, 5, 3, mida,  habitacions, placesPersones);
+        //ATRIBUTS NOUS
         setMaterial(material);
         setCasaMascota(casaMascota);
 
@@ -29,10 +30,5 @@ public class Glamping extends Casa {
     // Implementació del mètode correcteFuncionament
     public boolean correcteFuncionament() {
         return casaMascota;
-    }
-
-    @Override
-    public String toString() {
-        return "";
     }
 }
