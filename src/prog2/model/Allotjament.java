@@ -50,5 +50,8 @@ public abstract class Allotjament implements InAllotjament {
     }
 
     public abstract boolean correcteFuncionament();
-    public abstract String toString();
+    public String toString(){
+        return "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+".";
+        //"Nom=Allotjament Test, Id=ID001, estada mínima en temp ALTA: 5, estada mínima en temp BAIXA: 3."
+    }
 }
