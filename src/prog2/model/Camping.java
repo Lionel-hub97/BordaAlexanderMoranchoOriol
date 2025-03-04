@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class Camping implements InCamping {
 
     private final String nom_;
-    private ArrayList<Allotjament> allotjaments;
-    private ArrayList<Reserva> reserves;
+    protected static ArrayList<Allotjament> allotjaments;
+    private LlistaReserves reserves;
     private ArrayList<Client> clients;
 
 
@@ -23,8 +23,8 @@ public class Camping implements InCamping {
 
     public Camping (String nom) {
         this.nom_ = nom;
-        this.allotjaments = new ArrayList<>();
-        this.reserves = new ArrayList<>();
+        allotjaments = new ArrayList<>();
+        this.reserves = new LlistaReserves();
         this.clients = new ArrayList<>();
     }
 
@@ -57,7 +57,7 @@ public class Camping implements InCamping {
 
     @Override
     public int getNumReserves() {
-        return reserves.size();
+        return reserves.reserves.size();
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Camping implements InCamping {
     }
     @Override
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
-        Parcela parcela = new Parcela(nom_, idAllotjament_, 4, 2,  metres, connexioElectrica);
+        Parcela parcela = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
         allotjaments.add(parcela);
     }
     @Override
@@ -100,8 +100,17 @@ public class Camping implements InCamping {
     }
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+        // Busca client i allotjament
+        Client client = buscarClient(dni_);
+        Allotjament allotjament = buscarAllotjament(id_);
 
+        // Verifica existències
+        if (client == null || allotjament == null) {
+            throw new ExcepcioReserva("Client o allotjament no trobat");
+        }
 
+        // Delega la lògica a LlistaReserves
+        reserves.afegirReserva(allotjament, client, dataEntrada, dataSortida);
     }
     @Override
     public float calculMidaTotalParceles() {

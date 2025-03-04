@@ -7,6 +7,7 @@ public class Bungalow extends Casa {
     private boolean terrassa;
     private boolean tv;
     private boolean aireFred;
+    private String mida;
 
     //CONSTRUCTOR
     public Bungalow(String nom, String idAllotjament, String  mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
@@ -18,6 +19,7 @@ public class Bungalow extends Casa {
         setTerrassa(terrassa);
         setTv(tv);
         setAireFred(aireFred);
+        this.mida = mida;
     }
     // Getter y Setter
     public int getPlacesParquing() {
@@ -50,7 +52,7 @@ public class Bungalow extends Casa {
         return aireFred;
     }
     public String toString() {
-        String x = "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+". Bungalow{mida="+getMida()+", connexioElectrica=true}";
+        return "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+". Bungalow{mida="+getMida(mida)+", connexioElectrica=true}";
 
     }
 }

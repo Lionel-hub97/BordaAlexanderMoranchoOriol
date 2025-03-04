@@ -5,12 +5,13 @@ public class Parcela extends Allotjament {
     private boolean connexioElectrica;
 
     // Constructor
-    public Parcela(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa, float mida, boolean connexioElectrica) {
+    public Parcela(String nom, String id, float mida, boolean connexioElectrica) {
         super.setNom(nom);
-        super.setEstadaMinima( estadaMinimaAlta,estadaMinimaBaixa);
+        super.setEstadaMinima( 4,2);
         this.mida = mida;
         this.connexioElectrica = connexioElectrica;
     }
+
 
     // Implementació del mètode correcteFuncionament
     @Override
