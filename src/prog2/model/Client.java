@@ -26,7 +26,7 @@ public class Client {
     // Setter per al DNI amb validació
     public void setDni(String dni) throws ExcepcioReserva {
         if (dni == null || dni.length() != 9) {
-            throw new ExcepcioReserva("DNI invàlid: ha de tenir exactament 9 caràcters.");
+            throw new ExcepcioReserva("El DNI ha de tenir 9 caràcters.");
         }
         this.dni = dni;
     }
