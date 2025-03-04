@@ -16,36 +16,31 @@ public class GestorCamping {
      */
     public static void main(String[] args) {
 
+        System.out.println();
+
         Camping campingMar = new Camping("Camping del Mar");
 
         omplirDadesModel(campingMar);
         
         ferReserves(campingMar);
 
-        //ELIMINAR: ---
-        ArrayList<Allotjament> allotjaments = campingMar.getLlistaAllotjaments();
-        for(Allotjament allotjament : allotjaments){
-            System.out.println("Nom: " + allotjament.getNom() + ", estada minima BAIXA: " + allotjament.getEstadaMinimaBAIXA() + ", estada minima ALTA: " + allotjament.getEstadaMinimaALTA());
-        }
-        // ---
-
         // Calcular la mida total de les parcel·les (en M^2) del Càmping i mostrar un missatge de la següent manera:
         // >> La mida total de les parcel·les del Càmping del Mar és de X m^2)
-        System.out.println("La mida total de les parcel·les del Càmping del Mar és "+ campingMar.calculMidaTotalParceles() + "m^2");
+        System.out.println("\n >> La mida total de les parcel·les del Càmping del Mar és "+ campingMar.calculMidaTotalParceles() + "m^2");
         //--------------------------------------------------------------------------------------------------------------------
         // Per completar
 
 
         // Mostrar el número total d'allotjaments del Càmping i el número d'allotjaments que estan operatius amb el següent missatge:
         // >> El número total d'allotjaments del Càmping és X dels quals X allotjaments estan operatius.
-        System.out.println("El número total d'allotjaments del càmping és "+ campingMar.getNumAllotjaments() + " dels quals " + campingMar.calculAllotjamentsOperatius() + " allotjaments estan operatius.");
+        System.out.println("\n >> El número total d'allotjaments del càmping és "+ campingMar.getNumAllotjaments() + " dels quals " + campingMar.calculAllotjamentsOperatius() + " allotjaments estan operatius.");
 
         //--------------------------------------------------------------------------------------------------
         // Per completar
 
         // Mostrar l'allotjament amb estada mínima de la temporada baixa més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent:
-        System.out.println("L'allotjament amb estada mínima de la temporada baixa més curta és el següent: "+ campingMar.getAllotjamentEstadaMesCurta().getNom());
+        System.out.println("\n >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent: "+ campingMar.getAllotjamentEstadaMesCurta().getNom());
 
         //--------------------------------------------------------------------------------------------------
         // Per completar
