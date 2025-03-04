@@ -53,7 +53,7 @@ public class CampingTest {
     }
 
     @Test
-    void testAfegirAllotjaments() {
+    void testAfegirAllotjaments()    {
         assertEquals(2, camping.getNumAllotjaments());
     }
 
