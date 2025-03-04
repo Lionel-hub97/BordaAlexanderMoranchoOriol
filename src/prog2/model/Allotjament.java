@@ -12,7 +12,6 @@ public abstract class Allotjament implements InAllotjament {
 
     //CONSTRUCTOR
 
-
     //GETTERS Y SETTERS
     @Override
     public String getNom() {

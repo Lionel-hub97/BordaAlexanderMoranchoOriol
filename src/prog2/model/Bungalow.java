@@ -7,6 +7,7 @@ public class Bungalow extends Casa {
     private boolean terrassa;
     private boolean tv;
     private boolean aireFred;
+    private String mida;
 
     //CONSTRUCTOR
     public Bungalow(String nom, String idAllotjament, String  mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
@@ -18,6 +19,7 @@ public class Bungalow extends Casa {
         setTerrassa(terrassa);
         setTv(tv);
         setAireFred(aireFred);
+        this.mida = mida;
     }
     // Getter y Setter
     public int getPlacesParquing() {
@@ -44,13 +46,27 @@ public class Bungalow extends Casa {
     public void setAireFred(boolean aireFred) {
         this.aireFred = aireFred;
     }
-
+    public String getMida() {
+        return mida;
+    }
+    public void setMida(String mida) {
+        this.mida = mida;
+    }
+    public int getHabitacions(){
+        return getNumHabitacions();
+    }
+    public int getPlacesPersones(){
+        return getCapacitatPersones();
+    }
+    public boolean isTerrassa(){
+        return terrassa;
+    }
     // Implementació del mètode correcteFuncionament
     public boolean correcteFuncionament(){
         return aireFred;
     }
     public String toString() {
-        String x = "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+". Bungalow{mida="+getMida()+", connexioElectrica=true}";
+        return "Nom="+getNom()+", Id="+getId()+", estada mínima en temp ALTA: "+getEstadaMinimaALTA()+", estada mínima en temp BAIXA: "+getEstadaMinimaBAIXA()+". Bungalow{mida="+getMida(mida)+", connexioElectrica=true}";
 
     }
 }

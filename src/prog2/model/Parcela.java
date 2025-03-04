@@ -1,15 +1,27 @@
 package prog2.model;
 
 public class Parcela extends Allotjament {
-    private double mida;
+    private float mida;
     private boolean connexioElectrica;
 
     // Constructor
-    public Parcela(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa, double mida, boolean connexioElectrica) {
-        super(nom, id, estadaMinimaAlta, estadaMinimaBaixa);
+    public Parcela(String nom, String id, float mida, boolean connexioElectrica) {
+        super.setNom(nom);
+        super.setEstadaMinima( 4,2);
         this.mida = mida;
         this.connexioElectrica = connexioElectrica;
     }
+
+    public float getMida() {
+        return mida;
+    }
+    public void setMida(float mida) {
+        this.mida = mida;
+    }
+    public boolean isConnexioElectrica() {
+        return connexioElectrica;
+    }
+
 
     // Implementació del mètode correcteFuncionament
     @Override
@@ -19,6 +31,6 @@ public class Parcela extends Allotjament {
 
     @Override
     public String toString() {
-        return super.toString() + ". Parcela(mida=" + mida + ", connexioElectrica=" + connexioElectrica + ")";
+        return  ". Parcela(mida=" + mida + ", connexioElectrica=" + connexioElectrica + ")";
     }
 }
