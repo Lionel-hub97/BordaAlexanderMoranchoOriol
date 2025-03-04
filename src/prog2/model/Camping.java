@@ -37,7 +37,7 @@ public class Camping implements InCamping {
 
     @Override
     public LlistaReserves getLlistaReserves() {
-        return null;
+        return reserves;
     }
 
     @Override
@@ -114,15 +114,41 @@ public class Camping implements InCamping {
     }
     @Override
     public float calculMidaTotalParceles() {
-        return 0;
+        float midatotal = 0;
+        for(Allotjament allotjament: allotjaments) {
+            if(allotjament instanceof Parcela parcela) {
+                midatotal += parcela.getMida();
+            }
+        }
+        return midatotal;
     }
     @Override
     public int calculAllotjamentsOperatius() {
-        return 0;
+        int comptador = 0;
+        for(Allotjament allotjament: allotjaments) {
+            if(allotjament.correcteFuncionament()) {
+                comptador ++;
+            }
+        }
+        return comptador;
     }
     @Override
     public Allotjament getAllotjamentEstadaMesCurta() {
-        return null;
+        if (allotjaments.isEmpty()) {
+            return null; // Retorna null si no hi ha allotjaments
+        }
+        Allotjament allotjamentMin = null;
+        long minEstada = Long.MAX_VALUE;
+
+        for(Allotjament allotjament: allotjaments) {
+            long estada = allotjament.getEstadaMinima(InAllotjament.Temp.BAIXA);
+            if(estada < minEstada) {
+                minEstada = estada;
+                allotjamentMin = allotjament;
+            }
+
+        }
+        return allotjamentMin;
     }
 
     //ESTOS DOS METODOS SIGUIENTES SON DE SOPORTE TAL Y COMO DICE EL PDF PAGINA 7, buscarAllotjament(); buscarClient();
