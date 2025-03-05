@@ -12,13 +12,7 @@ public class LlistaReserves implements InLlistaReserves {
     public LlistaReserves() {
         this.reserves = new ArrayList<>();
     }
-    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
-        InAllotjament.Temp temp = Camping.getTemporada(dataEntrada);
 
-        long dies = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
-
-        return dies > allotjament.getEstadaMinima(temp);
-    }
     @Override
     public void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         if(isEstadaMinima(allotjament, dataEntrada, dataSortida)){
@@ -42,7 +36,9 @@ public class LlistaReserves implements InLlistaReserves {
         return reserves.size();
     }
 
-    public boolean  allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
+    //METODOS DE SOPORTE
+    public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
+
 
         for(Allotjament allotjament1 : Camping.allotjaments){
             boolean disponible = false;
@@ -63,8 +59,21 @@ public class LlistaReserves implements InLlistaReserves {
             }
         }
         return false;
-
     }
+    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+        long estada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
 
+        InAllotjament.Temp temp = switch (Camping.getTemporada(dataEntrada)) {
+            case ALTA -> switch (Camping.getTemporada(dataSortida)) {
+                case ALTA -> InAllotjament.Temp.ALTA;
+                case BAIXA -> throw new ExcepcioReserva("NS QUE TIPO DE ERROR SERIA ESTE");
+            };
+            case BAIXA -> switch (Camping.getTemporada(dataSortida)) {
+                case ALTA -> throw new ExcepcioReserva("NS QUE TIPO DE ERROR SERIA ESTE");
+                case BAIXA -> InAllotjament.Temp.BAIXA;
+            };
+        };
 
+        return allotjament.getEstadaMinima(temp) >= estada;
+    }
 }

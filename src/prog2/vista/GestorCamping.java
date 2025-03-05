@@ -263,7 +263,6 @@ public class GestorCamping {
 
         // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
         // Per completar
-        
     }
     
 

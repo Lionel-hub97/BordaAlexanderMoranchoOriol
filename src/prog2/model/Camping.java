@@ -9,16 +9,9 @@ import java.util.ArrayList;
 public class Camping implements InCamping {
 
     private final String nom;
-    protected static ArrayList<Allotjament> allotjaments;
-    private LlistaReserves reserves;
+    private ArrayList<Allotjament> allotjaments;
     private ArrayList<Client> clients;
-
-
-    private String idAllotjament, mida, nomClient, dni, codiWifi, material;
-    private float metres;
-    private int habitacions, placesPersones, placesParquing;
-    private boolean connexioElectrica, terrassa, tv, aireFred, serveisExtra, casaMascota, terrassaBarbacoa;
-
+    private LlistaReserves reserves;
     //CONSTRUCTORS
 
     public Camping (String nom) {
@@ -93,6 +86,8 @@ public class Camping implements InCamping {
 
     }
     @Override
+
+
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         Client client = buscarClient(dni_);
         Allotjament allotjament = buscarAllotjament(id_);
@@ -145,7 +140,7 @@ public class Camping implements InCamping {
         return allotjamentMin;
     }
 
-    //ESTOS DOS METODOS SIGUIENTES SON DE SOPORTE TAL Y COMO DICE EL PDF PAGINA 7, buscarAllotjament(); buscarClient();
+    //METODOS DE SOPORTE
     public Client buscarClient(String dni){
         for (Client client : clients) {
             if (client.getDni().equals(dni)) {
