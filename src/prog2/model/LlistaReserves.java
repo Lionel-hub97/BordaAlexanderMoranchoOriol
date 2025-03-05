@@ -22,7 +22,7 @@ public class LlistaReserves implements InLlistaReserves {
                 reserves.add(reserva);
             }
             else{
-                throw new ExcepcioReserva("Allotjament no disponible per les dates sol·licitades");
+                throw new ExcepcioReserva("no està disponible");
             }
         }
         else{
@@ -45,11 +45,15 @@ public class LlistaReserves implements InLlistaReserves {
         }
         return true;
     }
-    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
+    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+        boolean compleix;
         InAllotjament.Temp temp = Camping.getTemporada(dataEntrada);
 
         long dies = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
-
-        return dies > allotjament.getEstadaMinima(temp);
+        compleix = dies >= allotjament.getEstadaMinima(temp);
+        if(!compleix){
+            throw new ExcepcioReserva("no compleixen l'estada mínima");
+        }
+        return true;
     }
 }
