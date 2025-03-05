@@ -40,6 +40,13 @@ public class LlistaReserves implements InLlistaReserves {
     public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
 
 
+        for (Reserva reserva : reserves) {
+            if (reserva.getAllotjament().getId().equals(allotjament.getId())) {
+               return reserva.getDataSortida().isBefore(dataEntrada) || reserva.getDataEntrada().isAfter(dataSortida);
+            }
+        }
+        return false;
+        /*
         for(Allotjament allotjament1 : Camping.allotjaments){
             boolean disponible = false;
             if(allotjament1.equals(allotjament)){
@@ -47,7 +54,7 @@ public class LlistaReserves implements InLlistaReserves {
 
                 for(Reserva reserva : reserves){
                     if(reserva.getAllotjament().equals(allotjament)){
-                        disponible = (reserva.getDataSortida().isBefore(dataEntrada) || reserva.getDataEntrada().isAfter(dataSortida));
+                        disponible = ();
                         if(!disponible){
                             break;
                         }
@@ -59,6 +66,7 @@ public class LlistaReserves implements InLlistaReserves {
             }
         }
         return false;
+         */
     }
     public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         long estada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
