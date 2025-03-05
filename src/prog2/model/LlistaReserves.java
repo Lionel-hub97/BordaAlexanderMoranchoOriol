@@ -68,20 +68,11 @@ public class LlistaReserves implements InLlistaReserves {
         return false;
 
     }
-    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
-        long estada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
+    public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
+        InAllotjament.Temp temp = Camping.getTemporada(dataEntrada);
 
-        InAllotjament.Temp temp = switch (Camping.getTemporada(dataEntrada)) {
-            case ALTA -> switch (Camping.getTemporada(dataSortida)) {
-                case ALTA -> InAllotjament.Temp.ALTA;
-                case BAIXA -> throw new ExcepcioReserva("NS QUE TIPO DE ERROR SERIA ESTE");
-            };
-            case BAIXA -> switch (Camping.getTemporada(dataSortida)) {
-                case ALTA -> throw new ExcepcioReserva("NS QUE TIPO DE ERROR SERIA ESTE");
-                case BAIXA -> InAllotjament.Temp.BAIXA;
-            };
-        };
+        long dies = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
 
-        return allotjament.getEstadaMinima(temp) >= estada;
+        return dies > allotjament.getEstadaMinima(temp);
     }
 }
