@@ -45,8 +45,8 @@ public class LlistaReserves implements InLlistaReserves {
                return reserva.getDataSortida().isBefore(dataEntrada) || reserva.getDataEntrada().isAfter(dataSortida);
             }
         }
-        return false;
-        /*
+        return true;
+
         for(Allotjament allotjament1 : Camping.allotjaments){
             boolean disponible = false;
             if(allotjament1.equals(allotjament)){
@@ -66,7 +66,7 @@ public class LlistaReserves implements InLlistaReserves {
             }
         }
         return false;
-         */
+
     }
     public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         long estada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
