@@ -38,35 +38,12 @@ public class LlistaReserves implements InLlistaReserves {
 
     //METODOS DE SOPORTE
     public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
-
-
         for (Reserva reserva : reserves) {
             if (reserva.getAllotjament().getId().equals(allotjament.getId())) {
                return reserva.getDataSortida().isBefore(dataEntrada) || reserva.getDataEntrada().isAfter(dataSortida);
             }
         }
         return true;
-
-        for(Allotjament allotjament1 : Camping.allotjaments){
-            boolean disponible = false;
-            if(allotjament1.equals(allotjament)){
-                disponible = true;
-
-                for(Reserva reserva : reserves){
-                    if(reserva.getAllotjament().equals(allotjament)){
-                        disponible = ();
-                        if(!disponible){
-                            break;
-                        }
-                    }
-                }
-            }
-            if(disponible){
-                return true;
-            }
-        }
-        return false;
-
     }
     public boolean isEstadaMinima (Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida) {
         InAllotjament.Temp temp = Camping.getTemporada(dataEntrada);
