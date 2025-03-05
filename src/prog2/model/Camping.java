@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Camping implements InCamping {
 
-    private final String nom_;
+    private final String nom;
     protected static ArrayList<Allotjament> allotjaments;
     private LlistaReserves reserves;
     private ArrayList<Client> clients;
@@ -22,7 +22,7 @@ public class Camping implements InCamping {
     //CONSTRUCTORS
 
     public Camping (String nom) {
-        this.nom_ = nom;
+        this.nom = nom;
         allotjaments = new ArrayList<>();
         this.reserves = new LlistaReserves();
         this.clients = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Camping implements InCamping {
     //GETTERS
     @Override
     public String getNom() {
-        return nom_;
+        return nom;
 
     }
 
@@ -69,33 +69,27 @@ public class Camping implements InCamping {
     //OTROS CONSTRUCTORES
     @Override
     public void afegirClient(String nom_, String dni_) throws ExcepcioReserva {
-        Client client = new Client(nom_, dni_);
-        clients.add(client);
+        clients.add(new Client(nom_, dni_));
     }
     @Override
     public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
-        Parcela parcela = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
-        allotjaments.add(parcela);
+        allotjaments.add(new Parcela(nom_, idAllotjament_, metres, connexioElectrica));
     }
     @Override
     public void afegirBungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
-        Bungalow bungalow = new Bungalow(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
-        allotjaments.add(bungalow);
+        allotjaments.add(new Bungalow(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred));
     }
     @Override
     public void afegirBungalowPremium(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred, boolean serveisExtra, String codiWifi) {
-        BungalowPremium bungalowPremium = new BungalowPremium(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred, serveisExtra, codiWifi);
-        allotjaments.add(bungalowPremium);
+        allotjaments.add(new BungalowPremium(nom_, idAllotjament_, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred, serveisExtra, codiWifi));
     }
     @Override
     public void afegirGlamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota) {
-        Glamping glamping = new Glamping(nom_, idAllotjament_, mida, habitacions, placesPersones, material, casaMascota);
-        allotjaments.add(glamping);
+        allotjaments.add(new Glamping(nom_, idAllotjament_, mida, habitacions, placesPersones, material, casaMascota));
     }
     @Override
     public void afegirMobilHome(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, boolean terrassaBarbacoa) {
-        MobilHome mobilHome = new MobilHome(nom_, idAllotjament_, mida, habitacions, placesPersones, terrassaBarbacoa);
-        allotjaments.add(mobilHome);
+        allotjaments.add(new MobilHome(nom_, idAllotjament_, mida, habitacions, placesPersones, terrassaBarbacoa));
 
     }
     @Override
