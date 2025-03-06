@@ -7,7 +7,7 @@ public class Bungalow extends Casa {
     private boolean terrassa;
     private boolean tv;
     private boolean aireFred;
-    private String mida;
+
 
     //CONSTRUCTOR
     public Bungalow(String nom, String idAllotjament, String  mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred) {
@@ -43,12 +43,7 @@ public class Bungalow extends Casa {
     public void setAireFred(boolean aireFred) {
         this.aireFred = aireFred;
     }
-    public String getMida() {
-        return mida;
-    }
-    public void setMida(String mida) {
-        this.mida = mida;
-    }
+
     public int getHabitacions(){
         return getNumHabitacions();
     }
