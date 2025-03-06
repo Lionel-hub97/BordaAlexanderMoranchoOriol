@@ -8,9 +8,9 @@ public abstract class Casa extends Allotjament {
     // Constructor
     public Casa(String nom, String id, int estadaMinimaAlta, int estadaMinimaBaixa, String mida, int numHabitacions, int capacitatPersones) {
         super(nom, id, estadaMinimaAlta, estadaMinimaBaixa);
-        this.mida = mida;
-        this.numHabitacions = numHabitacions;
-        this.capacitatPersones = capacitatPersones;
+        setMida(mida);
+        setNumHabitacions(numHabitacions);
+        setCapacitatPersones(capacitatPersones);
     }
 
     //GETTERS Y SETTERS
