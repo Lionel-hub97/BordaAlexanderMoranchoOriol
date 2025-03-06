@@ -7,7 +7,7 @@ public abstract class Allotjament implements InAllotjament {
     private String idAllotjament;
     private long estadaMinimaALTA;
     private long estadaMinimaBAIXA;
-    private Temp temp;
+
 
 
     //CONSTRUCTOR
