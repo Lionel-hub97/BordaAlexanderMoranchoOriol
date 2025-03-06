@@ -7,7 +7,7 @@ public abstract class Allotjament implements InAllotjament {
     private String idAllotjament;
     private long estadaMinimaALTA;
     private long estadaMinimaBAIXA;
-    private Temp temp;
+
 
 
     //CONSTRUCTOR
@@ -39,7 +39,7 @@ public abstract class Allotjament implements InAllotjament {
         return switch (temp) {
             case ALTA -> estadaMinimaALTA;
             case BAIXA -> estadaMinimaBAIXA;
-            default -> throw new IllegalArgumentException("Temporada no vàlida");
+
         };
     }
     @Override
