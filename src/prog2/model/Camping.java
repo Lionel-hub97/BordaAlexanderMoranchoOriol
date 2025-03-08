@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Camping implements InCamping {
 
-    private final String nom;
+    private String nom;
     private ArrayList<Allotjament> allotjaments;
     private ArrayList<Client> clients;
     private LlistaReserves reserves;
