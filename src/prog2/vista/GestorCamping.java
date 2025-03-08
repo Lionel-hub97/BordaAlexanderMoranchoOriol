@@ -262,7 +262,7 @@ public class GestorCamping {
         boolean aireFred = true;
 
         camping.afegirBungalow(nom, idAllotjament, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
-        System.out.println("Nou Bungalow Est Nord afegit!");
+
 
         // 2. Nou Bungalow Premium
         nom = "Bungalow Premium Nord";
@@ -278,7 +278,7 @@ public class GestorCamping {
         String codiWifi = "BungalowPremium123";
 
         camping.afegirBungalowPremium(nom, idAllotjament, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred, serveisExtra, codiWifi);
-        System.out.println("Nou Bungalow Premium afegit!");
+
 
         // 3. Nou Glamping
         nom = "Glamping Est";
@@ -290,7 +290,7 @@ public class GestorCamping {
         boolean casaMascota = false;
 
         camping.afegirGlamping(nom, idAllotjament, mida, habitacions, placesPersones, material, casaMascota);
-        System.out.println("Nou Glamping Est afegit!");
+
 
         // 4. Nou Mobil-Home
         nom = "Mobil-Home Nord";
@@ -301,7 +301,7 @@ public class GestorCamping {
         boolean terrassaBarbacoa = true;
 
         camping.afegirMobilHome(nom, idAllotjament, mida, habitacions, placesPersones, terrassaBarbacoa);
-        System.out.println("Nou Mobil-Home Nord afegit!");
+
 
         // Realitzar reserves abans i després de les dates de la reserva existent
 
@@ -313,7 +313,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva abans de la reserva 1 afegida amb èxit al Bungalow Est Nord!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
@@ -326,7 +326,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva després de la reserva 1 afegida amb èxit al Bungalow Est Nord!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
@@ -339,7 +339,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva afegida amb èxit al Bungalow Premium Nord!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
@@ -352,7 +352,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva afegida amb èxit al Glamping Est!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
@@ -365,7 +365,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva afegida amb èxit al Mobil-Home Nord!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
@@ -378,7 +378,7 @@ public class GestorCamping {
 
         try {
             camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
-            System.out.println("Reserva afegida amb èxit al Mobil-Home Nord!");
+
         } catch (ExcepcioReserva ex) {
             System.out.println(ex.getMessage());
         }
