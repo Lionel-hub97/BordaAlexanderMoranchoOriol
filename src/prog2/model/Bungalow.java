@@ -57,4 +57,11 @@ public class Bungalow extends Casa {
     public boolean correcteFuncionament(){
         return aireFred;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Bungalow{placesParquing=" + placesParquing +
+                ", terrassa=" + terrassa + ", tv=" + tv + ", aireFred=" + aireFred + "}";
+    }
+
 }

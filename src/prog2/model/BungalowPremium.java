@@ -35,4 +35,10 @@ public class BungalowPremium extends Bungalow {
         return super.correcteFuncionament() && (7 < num_digits && num_digits < 17);
     }
 
+    @Override
+    public String toString() {
+        String baseString = super.toString();
+        baseString = baseString.substring(0, baseString.length() - 1);
+        return baseString + ", serveisExtra=" + serveisExtra + ", codiWifi='" + codiWifi + "'}";
+    }
 }

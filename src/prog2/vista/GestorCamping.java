@@ -21,7 +21,7 @@ public class GestorCamping {
         Camping campingMar = new Camping("Camping del Mar");
 
         omplirDadesModel(campingMar);
-        
+
         ferReserves(campingMar);
 
         // Calcular la mida total de les parcel·les (en M^2) del Càmping i mostrar un missatge de la següent manera:
@@ -40,7 +40,7 @@ public class GestorCamping {
 
         // Mostrar l'allotjament amb estada mínima de la temporada baixa més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent:
-        System.out.println("\n >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent: "+ campingMar.getAllotjamentEstadaMesCurta().getNom());
+        System.out.println("\n >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent: "+ campingMar.getAllotjamentEstadaMesCurta().toString());
 
         //--------------------------------------------------------------------------------------------------
         // Per completar
@@ -192,6 +192,8 @@ public class GestorCamping {
      * Mètode per fer reserves d'allotjaments.
      * @param camping
      */
+
+
     private static void ferReserves(Camping camping) {
         // Reserva 1 (Ja està implementada)
         String dni = "12345678X";
@@ -229,40 +231,160 @@ public class GestorCamping {
             System.out.println(ex.getMessage()); // Mostrarà error per allotjament no trobat
         }
     }
-        // Per completar:
-        
-        // 1. Afegeix una reserva pel client amb DNI "12345678X" de l'allotjament amb identificador "100P"
-        // amb la data d'entrada 20 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
 
-        // Declarar les variables de tipus String idAllotjament i dni.
-        // Per completar
 
-        // Assigna els valors corresponents.
-        // Per completar
+    //PRUEBAS DE AFEGIR CLIENT Y RESERVES POSTERIORS
+    /*
+    //PRUEBAS DE AFEGIR CLIENT Y RESERVES POSTERIORS
+    private static void ferReserves(Camping camping) {
+        // Reserva 1 (Ja està implementada)
+        String dni = "12345678X";
+        String idAllotjament = "100P";
+        LocalDate dataEntrada = LocalDate.of(2025, 2, 20);
+        LocalDate dataSortida = LocalDate.of(2025, 2, 28);
 
-        // Crear una LocalDate per definir la data de la reserva.
-        // Per completar
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
 
-        // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
-        
-        // 2. Afegeix una reserva pel client amb DNI "78659101A" de l'allotjament amb identificador "100P"
-        // amb la data d'entrada 25 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
+        // Afegir nous allotjaments
+        // 1. Nou Bungalow
+        String nom = "Bungalow Est Nord";
+        idAllotjament = "110B"; // Nou ID
+        String mida = "Gran";
+        int habitacions = 2;
+        int placesPersones = 6;
+        int placesParquing = 1;
+        boolean terrassa = true;
+        boolean tv = true;
+        boolean aireFred = true;
 
-        // Assigna els nous valors a les variables
-        // Per completar
+        camping.afegirBungalow(nom, idAllotjament, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred);
+        System.out.println("Nou Bungalow Est Nord afegit!");
 
-        // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
-           
-        // 3. Afegeix una reserva pel client amb DNI "789101A" de l'allotjament amb identificador "300S"
-        // amb la data d'entrada 25 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
+        // 2. Nou Bungalow Premium
+        nom = "Bungalow Premium Nord";
+        idAllotjament = "111BP"; // Nou ID
+        mida = "Gran";
+        habitacions = 2;
+        placesPersones = 4;
+        placesParquing = 1;
+        terrassa = true;
+        tv = false;
+        aireFred = true;
+        boolean serveisExtra = true;
+        String codiWifi = "BungalowPremium123";
 
-        // Assigna els nous valors a les variables.    
-        // Per completar
+        camping.afegirBungalowPremium(nom, idAllotjament, mida, habitacions, placesPersones, placesParquing, terrassa, tv, aireFred, serveisExtra, codiWifi);
+        System.out.println("Nou Bungalow Premium afegit!");
 
-        // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
+        // 3. Nou Glamping
+        nom = "Glamping Est";
+        idAllotjament = "112G"; // Nou ID
+        mida = "Petita";
+        habitacions = 1;
+        placesPersones = 2;
+        String material = "Tela";
+        boolean casaMascota = false;
+
+        camping.afegirGlamping(nom, idAllotjament, mida, habitacions, placesPersones, material, casaMascota);
+        System.out.println("Nou Glamping Est afegit!");
+
+        // 4. Nou Mobil-Home
+        nom = "Mobil-Home Nord";
+        idAllotjament = "113MH"; // Nou ID
+        mida = "Mitjana";
+        habitacions = 2;
+        placesPersones = 4;
+        boolean terrassaBarbacoa = true;
+
+        camping.afegirMobilHome(nom, idAllotjament, mida, habitacions, placesPersones, terrassaBarbacoa);
+        System.out.println("Nou Mobil-Home Nord afegit!");
+
+        // Realitzar reserves abans i després de les dates de la reserva existent
+
+        // Reserva abans de la reserva 1
+        dni = "78659101A";
+        idAllotjament = "110B";  // Bungalow Est Nord
+        dataEntrada = LocalDate.of(2025, 2, 15);
+        dataSortida = LocalDate.of(2025, 2, 19);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva abans de la reserva 1 afegida amb èxit al Bungalow Est Nord!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva després de la reserva 1
+        dni = "789101A";
+        idAllotjament = "110B";  // Bungalow Est Nord
+        dataEntrada = LocalDate.of(2025, 3, 1);
+        dataSortida = LocalDate.of(2025, 3, 5);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva després de la reserva 1 afegida amb èxit al Bungalow Est Nord!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva per al nou Bungalow Premium
+        dni = "12345678X";
+        idAllotjament = "111BP";  // Bungalow Premium Nord
+        dataEntrada = LocalDate.of(2025, 3, 5);
+        dataSortida = LocalDate.of(2025, 3, 10);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva afegida amb èxit al Bungalow Premium Nord!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva per al nou Glamping
+        dni = "78659101A";
+        idAllotjament = "112G";  // Glamping Est
+        dataEntrada = LocalDate.of(2025, 3, 1);
+        dataSortida = LocalDate.of(2025, 3, 5);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva afegida amb èxit al Glamping Est!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva per al Mobil-Home
+        dni = "789101A";
+        idAllotjament = "113MH";  // Mobil-Home Nord
+        dataEntrada = LocalDate.of(2025, 3, 10);
+        dataSortida = LocalDate.of(2025, 3, 15);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva afegida amb èxit al Mobil-Home Nord!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        // Reserva per al Mobil-Home després de la reserva de Glamping
+        dni = "12345678X";
+        idAllotjament = "113MH";  // Mobil-Home Nord
+        dataEntrada = LocalDate.of(2025, 3, 20);
+        dataSortida = LocalDate.of(2025, 3, 25);
+
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+            System.out.println("Reserva afegida amb èxit al Mobil-Home Nord!");
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    */
+
     }
     
 
